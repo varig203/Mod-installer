@@ -1,3 +1,3 @@
 
 def test():
-    print('Hello')
+    print('Linux')
