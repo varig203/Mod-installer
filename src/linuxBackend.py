@@ -1,3 +1,6 @@
+import os
 
-def test():
-    print('Linux')
+def fnChangeDir():
+    sUsrDir = os.path.expanduser('~')
+    os.chdir(sUsrDir + str('/.minecraft'))
+
