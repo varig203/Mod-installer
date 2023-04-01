@@ -16,7 +16,7 @@ def fnChangeDir():
 def fnForgeInstall():
     # Grabs the forge installer and runs it
     fnChangeDir()
-    print('Download directory ' + (os.getcwd()))
+    print('Found "Download" directory: ' + (os.getcwd()))
     
     url = 'https://maven.minecraftforge.net/net/minecraftforge/forge/1.19.2-43.2.8/forge-1.19.2-43.2.8-installer.jar'
     r = requests.get(url, allow_redirects = True)
