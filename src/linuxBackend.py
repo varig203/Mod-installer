@@ -5,10 +5,12 @@ sUsrDir = os.path.expanduser('~')
 
 # Basically changes directory based on sDownloads
 def fnChangeDir():
+    download_dir = os.path.join(sUsrDir, 'Downloads')
     if not sDownloads:
-        os.chdir(os.path.join(sUsrDir, '/.minecraft'))
-    else:
-        os.chdir(os.path.join(sUsrDir, '/Downloads'))
+        download_dir = os.path.join(sUsrDir, '.minecraft')
+    if not os.path.exists(download_dir):
+        os.makedirs(download_dir)
+    os.chdir(download_dir)
     
     
 def fnForgeInstall():
