@@ -5,7 +5,7 @@ sUsrDir = os.path.expanduser('~')
 # Mapping operating systems to functions
 os_functions = {
     'Linux': linuxBackend.fnForgeInstall,
-    'Windows': windowsBackend.test
+    'Windows': windowsBackend.fnForgeInstall
 }
 
 # Detecting operating system and running corresponding function
