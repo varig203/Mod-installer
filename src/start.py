@@ -1,15 +1,17 @@
 import platform, os, windowsBackend, linuxBackend
 
-sDownloads = True
 sUsrDir = os.path.expanduser('~')
 
-# Detecting operating system
-if platform.system() == "Linux":
-    print("Linux has been detected")
-    linuxBackend.fnForgeInstall()
-elif platform.system() == "Windows":
-    print("Windows has been detected")
-    windowsBackend.test()
+# Mapping operating systems to functions
+os_functions = {
+    'Linux': linuxBackend.fnForgeInstall,
+    'Windows': windowsBackend.test
+}
+
+# Detecting operating system and running corresponding function
+os_name = platform.system()
+if os_name in os_functions:
+    print(f"{os_name} has been detected")
+    os_functions[os_name]()
 else:
     print("Could not find your system version or your system is not supported")
-
